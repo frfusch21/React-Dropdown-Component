@@ -10,7 +10,7 @@ const CustomOption = (props) => {
     <components.Option {...props}>
       {parts.map((part, index) =>
         inputValue && part.toLowerCase() === inputValue.toLowerCase() ? (
-          <span key={index} className="bg-teal-300 px-1">{part}</span>
+          <span key={index} style={{ fontWeight: 'bold' }}>{part}</span>
         ) : (
           part
         )

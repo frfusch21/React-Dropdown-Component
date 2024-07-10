@@ -15,7 +15,9 @@ const options = [
   { value: '6', label: 'Long Long Long Long Option 6' },
 ];
 
-const Template = (args) => <Dropdown {...args} />;
+const Template = (args) => (
+  <Dropdown {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -23,4 +25,6 @@ Default.args = {
   isMulti: false,
   isSearchable: true,
   onChange: (selected) => console.log(selected),
+  usePortal: false,
 };
+

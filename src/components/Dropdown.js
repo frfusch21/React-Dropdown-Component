@@ -14,6 +14,17 @@ const Dropdown = ({ options, isMulti, isSearchable, onChange, usePortal, customO
 
   const components = { Option: customOptionRenderer || CustomOption };
 
+  const customStyles = {
+    menu: (provided) => ({
+      ...provided,
+      zIndex: 10000 + ' !important', 
+    }),
+    menuPortal: (provided) => ({
+      ...provided,
+      zIndex: 10000 + ' !important', 
+    }),
+  };
+
   const selectComponent = (
     <Select
       value={selectedOptions}
@@ -22,15 +33,21 @@ const Dropdown = ({ options, isMulti, isSearchable, onChange, usePortal, customO
       isMulti={isMulti}
       isSearchable={isSearchable}
       components={components}
-      className="z-50"
+      classNamePrefix="react-select"
+      styles={customStyles}
+      className="z-10000"
+      menuPortalTarget={usePortal ? document.body : null}
     />
   );
 
   if (usePortal) {
-    const portalElement = document.getElementById('portal-root') || document.createElement('div');
-    if (!document.getElementById('portal-root')) {
+    const iframe = document.getElementById('storybook-preview-iframe');
+    const iframeDocument = iframe ? iframe.contentDocument || iframe.contentWindow.document : document;
+    let portalElement = iframeDocument.getElementById('portal-root');
+    if (!portalElement) {
+      portalElement = iframeDocument.createElement('div');
       portalElement.id = 'portal-root';
-      document.body.appendChild(portalElement);
+      iframeDocument.body.appendChild(portalElement);
     }
     return ReactDOM.createPortal(selectComponent, portalElement);
   }

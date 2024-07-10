@@ -14,5 +14,28 @@ const config = {
     options: {},
   },
   staticDirs: ["..\\public"],
+  webpackFinal: async (config) => {
+    config.module.rules.push({
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions: {
+              plugins: [
+                require('tailwindcss'),
+                require('autoprefixer'),
+              ],
+            },
+          },
+        },
+      ],
+      include: require('path').resolve(__dirname, '../'),
+    });
+
+    return config;
+  },
 };
 export default config;
