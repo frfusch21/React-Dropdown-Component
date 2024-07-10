@@ -45,10 +45,13 @@ To start the development server and run the application:
 
     ```bash
     npm start
+```
 
-    **Storybook**
-    To start Storybook and view the components:
+ **Storybook**
+ To start Storybook and view the components:
 
     ```bash
     npm run storybook
-    This will start Storybook and open it in your default web browser at http://localhost:6006.
+    ```
+
+   This will start Storybook and open it in your default web browser at http://localhost:6006.
