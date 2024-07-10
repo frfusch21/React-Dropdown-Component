@@ -13,7 +13,7 @@ const config = {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  staticDirs: ["..\\public"],
+  staticDirs: ["../public"],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.css$/,
