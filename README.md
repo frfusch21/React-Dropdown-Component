@@ -39,19 +39,10 @@ Follow these instructions to set up and run the project locally.
    ```bash
    npm install
 
-### Running the Project
-- **Development Server**
-To start the development server and run the application:
+**Running the Project**
+To start the development server, run the application, Storybook and view the components
+This will start Storybook and open it in your default web browser at http://localhost:6006.
 
-    ```bash
-    npm start
-```
-
- **Storybook**
- To start Storybook and view the components:
-
-    ```bash
-    npm run storybook
-    ```
-
-   This will start Storybook and open it in your default web browser at http://localhost:6006.
+```bash
+npm start
+npm run storybook
