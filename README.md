@@ -9,7 +9,7 @@ This project demonstrates a customizable dropdown component with various feature
 - **Single or Multiple Selection**: Enable the dropdown to support both single and multiple option selections.
 - **Customizable Option Rendering**: Allow customization of how options are rendered.
 - **Search Filtering**: Ensure the search can filter a long list of options into a shorter list.
-- **Toggle Features**: Allow each feature (like search) to be turned on or off.
+- **Toggle Features**: Allow search feature to be turned on or off.
 - **Z-Index Compatibility**: Ensure the floating menu works with elements that have a z-index greater than 1000.
 
 ## Tech Stack
@@ -40,9 +40,19 @@ Follow these instructions to set up and run the project locally.
    npm install
 
 **Running the Project**
-To start the development server, run the application, Storybook and view the components
+To start the Component development server, run the application, Storybook and view the components
 This will start Storybook and open it in your default web browser at http://localhost:6006.
 
 ```bash
-npm start
 npm run storybook
+```
+
+**To Download this package to your react project simply use**
+```bash
+npm install dropdown-testing-app
+```
+
+Then use 
+```bash
+import Dropdown from 'dropdown-testing-app'
+```
