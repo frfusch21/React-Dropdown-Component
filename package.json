@@ -1,12 +1,12 @@
 {
   "name": "dropdown-testing-app",
-  "version": "0.1.2",
+  "version": "0.1.6",
+  "main": "src/components/Dropdown.js",
   "files": [
     "src",
     "public",
     ".storybook",
     "README.md",
-    "netlify.toml",
     "package.json",
     "tailwind.config.js"
   ],

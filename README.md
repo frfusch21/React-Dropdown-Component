@@ -56,3 +56,58 @@ Then use
 ```bash
 import Dropdown from 'dropdown-testing-app'
 ```
+
+Next, create 2 files in your root folder called 
+**.babelrc**
+```bash
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "ignore": ["/node_modules/(?!dropdown-testing-app)/"]
+}
+```
+
+**babel.config.js**
+```bash
+module.exports = {
+  presets: [
+    '@babel/preset-env',
+    '@babel/preset-react'
+  ],
+  ignore: [/node_modules\/(?!dropdown-testing-app)/]
+};
+```
+
+Then, make sure you are also install rewired and customized-cra
+**Rewired**
+```bash
+npm install --save-dev react-app-rewired
+```
+
+**customized-cra**
+```bash
+npm install --save-dev customize-cra
+```
+
+Then, add config-override.js
+```bash
+const { override, addBabelPreset, babelInclude } = require('customize-cra');
+const path = require('path');
+
+module.exports = override(
+  addBabelPreset('@babel/preset-react'),
+  babelInclude([
+    path.resolve('src'),
+    path.resolve('node_modules/dropdown-testing-app')
+  ])
+);
+```
+
+Lastly, change the scripts on your package.json to:
+```bash
+"scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  }
+```
