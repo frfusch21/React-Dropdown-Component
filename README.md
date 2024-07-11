@@ -78,6 +78,7 @@ module.exports = {
 ```
 
 Then, make sure you are also install rewired and customized-cra
+
 **Rewired**
 ```bash
 npm install --save-dev react-app-rewired
